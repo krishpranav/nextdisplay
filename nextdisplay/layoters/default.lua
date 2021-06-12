@@ -27,3 +27,9 @@ return function(layout, opts)
     end
 
     local max_h = 0;
+    local h_pi = math.pi * 0.5;
+
+    local function getang(phi)
+        phi = math.fmod(-phi + 0.5*math.pi, 2 * math.pi);
+        return math.deg(phi);
+    end
