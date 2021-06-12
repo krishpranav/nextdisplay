@@ -34,3 +34,21 @@ function gconfig_listen(key, id, fun)
     end 
     listeners[key][id] = fun;
 end 
+
+
+function gconfig_register(key, val)
+    if (not defalts[key]) then
+        local v = get_key(key);
+        if (v ~= nil) then
+            if (type(val) == "number") then
+                v = tonumber(v);
+            elseif (type(val) == "boolean") then
+                v = v == "true";
+            end
+            defaults[key] = v;
+        else
+            defaults[key] = val;
+        end 
+    end 
+end 
+
