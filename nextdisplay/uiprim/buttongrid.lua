@@ -5,3 +5,7 @@ local function destroy(ctx)
     mouse_droplistener(ctx);
     ctx.destroy = nil;
 end
+
+local function own(ctx, vid)
+    return ctx.vids[vid] ~= nil;
+end
