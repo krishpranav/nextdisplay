@@ -16,3 +16,14 @@ return function(layout, opts)
             table.insert(chld[v.parent], v);
         end
     end
+
+    if (not layer.selected) then
+        for i, v in ipairs(root) do
+            if (v:can_layout()) then
+                v:select();
+                break;
+            end
+        end
+    end
+
+    local max_h = 0;
