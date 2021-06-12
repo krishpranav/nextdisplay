@@ -41,3 +41,10 @@ local function rclick(ctx, vid)
         ctx:destroy();
     end
 end
+
+
+local function out(ctx, vid)
+    local tbl = ctx.vids[vid];
+    image_color(vid,
+    tbl.color[1] * 255, tbl.color[2] * 255, tbl.color[3] * 255);
+end
