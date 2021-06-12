@@ -23,3 +23,8 @@ HC_PALETTE = {
 	"\\#ed6785",
 	"\\#d0d0d0",
 };
+
+local defaults = system_load("config.lua")();
+local listeners = {};
+
+
