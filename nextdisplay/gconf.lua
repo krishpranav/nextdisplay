@@ -28,3 +28,9 @@ local defaults = system_load("config.lua")();
 local listeners = {};
 
 
+function gconfig_listen(key, id, fun)
+    if (listeners[key] == nil) then 
+        listeners[key] = {};
+    end 
+    listeners[key][id] = fun;
+end 
