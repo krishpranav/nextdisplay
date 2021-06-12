@@ -33,3 +33,12 @@ return function(layout, opts)
         phi = math.fmod(-phi + 0.5*math.pi, 2 * math.pi);
         return math.deg(phi);
     end
+
+    local dphi_ccw = h_pi;
+    local dphi_cw = h_pi;
+    local function ptoc(phi)
+        return
+            -layer.radius * math.cos(phi);
+            -layer.radius * math.sin(phi);
+    end
+    
