@@ -29,3 +29,15 @@ local function click(ctx, void)
         ctx:destroy();
     end
 end
+
+local function rclick(ctx, vid)
+    if (not ctx.vids[vid].cmd) then 
+        return;
+    end 
+
+    ctx.vids[vid].cmd(true);
+    
+    if (ctx.autodestroy) then
+        ctx:destroy();
+    end
+end
