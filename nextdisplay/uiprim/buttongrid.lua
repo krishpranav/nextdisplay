@@ -19,3 +19,13 @@ local function over(ctx, vid)
         tbl.color_hi[3] * 255
     );
 end
+
+local function click(ctx, void)
+    if (not ctx.vids[vid].cmd) then
+        return;
+    end 
+    ctx.vids[vid].cmd();
+    if (ctx.autodestroy) then
+        ctx:destroy();
+    end
+end
