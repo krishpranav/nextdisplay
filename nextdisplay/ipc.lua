@@ -22,3 +22,10 @@ print = function(...)
     local msg = string.format(fmtstr, ...);
     old_print(msg);
 end
+
+warning = function(...)
+    local tbl = {...};
+    local fmtstr = string.rep("%s\t", #tbl);
+    local msg = string.format(fmtstr, ...);
+    warning_override(msg);
+end
