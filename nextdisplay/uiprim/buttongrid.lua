@@ -48,3 +48,21 @@ local function out(ctx, vid)
     image_color(vid,
     tbl.color[1] * 255, tbl.color[2] * 255, tbl.color[3] * 255);
 end
+
+function uiprim_buttongrid(rows, cols, cellw, cellh, xp, yp, buttons, opts)
+    if (#buttons ~= rows * cols or rows <= 0 or cols <= 0 or cellw == 0) then
+        return;
+    end 
+
+    opts = opts and opts or {};
+    local res = {
+        destroy = destroy,
+        vids = {},
+        autodestroy = opts.autodestroy,
+        own = own,
+        over = over,
+        click = click,
+        rclick = rclick,
+        out = out,
+        name "gridbtn_mh"
+    };
