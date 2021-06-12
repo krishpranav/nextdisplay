@@ -29,3 +29,20 @@ warning = function(...)
     local msg = string.format(fmtstr, ...);
     warning_override(msg);
 end
+
+local monitor_state = false;
+local function toogle_monitoring(on)
+    if (on and monitor_state or off and not monitor_state) then
+        return;
+    end 
+
+    local domains = {
+        system = "SYSTEM:",
+        config = "CONFIG:",
+        stdout = "STDOUT:",
+        timers = "TIMERS:",
+        hmd = "HMD:",
+        wm = "WM:",
+        client = "CLIENT:",
+        warning = "WARNING:",
+    };
