@@ -66,21 +66,9 @@ function icon_synthesize(w, shader, argtbl)
 	return synthesize_icon(w, shader);
 end
 
--- The nametable mainly contains the active caches of vids based
--- on a base width. Normally icons are square, though it is not
--- a given.
---
--- For icons where we don't need to scale but can use a function
--- to generate the icon in question, the generate function is
--- provided.
 local nametable = {
 };
 
--- take a vsym that passed validation from suppl_valid_vsym and
--- return a vid that can be used for an image_sharestorage into
--- a caller controlled allocation, as well as a possible shader
--- identifier. An open question is if we should allow SDFs. The
--- problem comes with shader used for highlights etc.
 function icon_lookup(vsym, px_w)
 	if not nametable[vsym] then
 		vsym = "placeholder";
